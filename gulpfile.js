@@ -12,5 +12,8 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.sass(['app.scss'], 'public/css');
+    mix.scripts(['jquery.easing.1.3.js', 'cbpAnimatedHeader.js', 'classie.js', 
+        'contact_me.js', 'jqBootstrapValidation.js', 'app.js'], 'public/js');
+	
 });
