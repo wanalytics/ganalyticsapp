@@ -35,10 +35,14 @@
         
         <!-- CSS files come here -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link href="{{ asset("css/app.css") }}" rel="stylesheet">
+        @if(getenv('APP_ENV')=='production')
+            <link href="{{ elixir("css/app.min.css") }}" rel="stylesheet">
+        @else
+            <link href="{{ elixir("css/app.css") }}" rel="stylesheet">
+        @endif
 
         <!-- Custom Fonts -->
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/css/font-awesome.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
         <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -52,5 +56,11 @@
             <!-- JS files that can wait come here -->
             <script src='http://code.jquery.com/jquery-1.11.3.min.js' type='text/javascript'></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+            @if(getenv('APP_ENV')=='production')
+                <script src="{{ elixir("js/all.min.js") }}" type='text/javascript'></script>
+            @else
+                <script src="{{ elixir("js/all.js") }}" type='text/javascript'></script>
+            @endif
+                        
     </body>
 </html>

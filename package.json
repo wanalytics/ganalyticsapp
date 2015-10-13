@@ -1,6 +1,8 @@
 {
   "private": true,
+  "version": "0.0.1",
   "devDependencies": {
+    "del": "^2.0.2",
     "gulp": "^3.8.8"
   },
   "dependencies": {
